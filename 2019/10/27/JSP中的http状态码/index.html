@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JSP中的http状态码 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="刘大脑袋,刘大脑袋的 Blog">
+  
+  <meta name="description" content="HTTP请求和HTTP响应消息的格式相似，并具有以下结构  -初始状态行+ CRLF(回车+换行+新行) 零个或多个标头行+ CRLF 空白行，即 CRLF 一个可选的消息正文，如文件，查询数据或查询输出。 例如，服务器响应标头如下所示： 1234567891011121314151617181920HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ..">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP中的http状态码">
+<meta property="og:url" content="http://yoursite.com/2019/10/27/JSP中的http状态码/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="HTTP请求和HTTP响应消息的格式相似，并具有以下结构  -初始状态行+ CRLF(回车+换行+新行) 零个或多个标头行+ CRLF 空白行，即 CRLF 一个可选的消息正文，如文件，查询数据或查询输出。 例如，服务器响应标头如下所示： 1234567891011121314151617181920HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ..">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-27T13:42:10.969Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP中的http状态码">
+<meta name="twitter:description" content="HTTP请求和HTTP响应消息的格式相似，并具有以下结构  -初始状态行+ CRLF(回车+换行+新行) 零个或多个标头行+ CRLF 空白行，即 CRLF 一个可选的消息正文，如文件，查询数据或查询输出。 例如，服务器响应标头如下所示： 1234567891011121314151617181920HTTP/1.1 200 OKContent-Type: text/htmlHeader2: ..">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">刘大脑袋的 Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        刘大脑袋的 Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        这只是一个博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JSP中的http状态码" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JSP中的http状态码
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-27
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>HTTP请求和HTTP响应消息的格式相似，并具有以下结构 </p>
+<p>-初始状态行+ CRLF(回车+换行+新行)</p>
+<p>零个或多个标头行+ CRLF</p>
+<p>空白行，即 CRLF</p>
+<p>一个可选的消息正文，如文件，查询数据或查询输出。</p>
+<p>例如，服务器响应标头如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line"></span><br><span class="line">Content-Type: text/html</span><br><span class="line"></span><br><span class="line">Header2: ...</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">HeaderN: ...   </span><br><span class="line"></span><br><span class="line">(Blank Line)</span><br><span class="line"></span><br><span class="line">&lt;!doctype ...&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">   &lt;head&gt;...&lt;/head&gt; </span><br><span class="line"></span><br><span class="line">  &lt;body&gt;      ...   &lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>状态行由HTTP版本(示例中为HTTP/1.1)，状态码(示例中为200)和与状态代码相对应的非常短的消息(示例中为“OK”)组成。</p>
+<p>下表列出了所有从Web服务器返回HTTP状态代码和关联的消息 -</p>
+<p>代码    消息    描述</p>
+<p>100    Continue    服务器只收到请求的一部分，但只要尚未被拒绝，客户端应继续请求</p>
+<p>101    Switching Protocols    服务器切换协议。</p>
+<p>200    OK    请求成功</p>
+<p>201    Created    请求完成，并创建一个新的资源</p>
+<p>202    Accepted    请求被接受处理，但处理不完整。</p>
+<p>203    Non-authoritative Information    </p>
+<p>204    No Content    205    Reset Content    </p>
+<p>206    Partial Content    </p>
+<p>300    Multiple Choices    链接列表; 用户可以选择链接并转到该位置。最多有五个地址。</p>
+<p>301    Moved Permanently    所请求的页面已被移动到新的URL。</p>
+<p>302    Found    请求的页面暂时移动到新的URL。</p>
+<p>303    See Other    请求的页面可以在其它(不同的)URL下找到。</p>
+<p>304    Not Modified    </p>
+<p>305    Use Proxy    </p>
+<p>306    Unused    此代码在以前的版本中使用。它不再使用，但代码是保留的。</p>
+<p>307    Temporary Redirect    请求的页面暂时移动到新的URL。</p>
+<p>400    Bad Request    服务器不了解的请求。</p>
+<p>401    Unauthorized    请求的页面需要用户名和密码。</p>
+<p>402    Payment Required    不能使用此代码。</p>
+<p>403    Forbidden    禁止访问请求的页面404    Not Found    服务器找不到请求的页面。</p>
+<p>405    Method Not Allowed    请求中指定的方法是不允许的</p>
+<p>406    Not Acceptable    服务器只能生成不被客户端接受的响应。</p>
+<p>407    Proxy Authentication Required    可以在提供此请求之前，使用代理服务器进行身份验证。</p>
+<p>408    Request Timeout    请求比服务器准备等待的时间更长，请求超时了。</p>
+<p>409    Conflict    由于冲突，请求无法完成。</p>
+<p>410    Gone    请求的页面不再可用。</p>
+<p>411    Length Required    “Content-Length”未定义，服务器不接受请求。</p>
+<p>412    Precondition Failed    请求中给出的前提条件由服务器评估求值结果为false。</p>
+<p>413    Request Entity Too Large    服务器将不接受请求，因为请求实体太大了。</p>
+<p>414    Request-url Too Long    因为网址太长，服务器将不接受该请求。 当将“POST”请求转换为具有长查询信息的“GET”请求时，可能会发生这种情况。</p>
+<p>415    Unsupported Media Type    因为不支持媒体类型，服务器将不接受该请求。</p>
+<p>417    Expectation Failed    </p>
+<p>500    Internal Server Error    请求未完成，服务器遇到意外(错误)情况。</p>
+<p>501    Not Implemented    请求未完成，服务器不支持所需的功能。</p>
+<p>502    Bad Gateway    请求未完成，服务器从上游服务器收到无效响应。</p>
+<p>503    Service Unavailable    请求未完成，服务器暂时超载或关闭。</p>
+<p>504    Gateway Timeout    网关已经超时了</p>
+<p>505    HTTP Version Not Supported    服务器不支持“http协议”版本。</p>
+<p>设置HTTP状态代码的方法以下方法可用于在servlet程序中设置HTTP状态代码。 这些方法可用于HttpServletResponse对象。</p>
+<p>编号    方法    描述</p>
+<p>1    public void setStatus ( int statusCode )    此方法设置任意状态代码。 setStatus()方法将一个int(状态代码)作为参数。如果响应包含特殊的状态代码和文档，请确保在实际返回PrintWriter的内容之前调用setStatus()方法。</p>
+<p>2    public void sendRedirect(String url)    此方法将生成302响应以及给出新文档的URL的位置标头。</p>
+<p>3    public void sendError(int code, String message)    该方法发送状态码(通常为404)以及自动格式化在HTML文档内并发送给客户端的短消息。</p>
+<p>HTTP状态代码示例以下示例显示如何将407错误代码发送到客户端浏览器。之后，浏览器会显示“需要验证!!!”的 信息。打开Eclipse，创建一个动态Web项目：HttpStatusCode ， 其目录结构如下所示 -文件：index.jsp 的代码如下所示 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">-&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot;  </span><br><span class="line"></span><br><span class="line">  pageEncoding=&quot;UTF-8&quot;%&gt;</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt;</span><br><span class="line">    </span><br><span class="line">&lt;/!doctype&gt;</span><br><span class="line"></span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;&lt;title&gt;发送HTTP状态码&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;    &lt;%        // Set error code and reason.        response.sendError(407, &quot;Need authentication!!!&quot;);  </span><br><span class="line">%&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>部署上面项目，然后打开浏览器访问URL： <a href="http://localhost:8080/HttpStatusCode/index.jsp" target="_blank" rel="noopener">http://localhost:8080/HttpStatusCode/index.jsp</a> ， 可以看到结果 -为了使用HTTP状态代码更友好，可尝试设置不同的状态代码及其描述说明。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年10月27日 21:42</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/27/JSP中的http状态码/" title="JSP中的http状态码">http://yoursite.com/2019/10/27/JSP中的http状态码/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="John Doe">
+                John Doe
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/27/JSP中的http状态码/&title=《JSP中的http状态码》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/27/JSP中的http状态码/&title=《JSP中的http状态码》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/27/JSP中的http状态码/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP中的http状态码》 — Hexo&url=http://yoursite.com/2019/10/27/JSP中的http状态码/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/27/JSP中的http状态码/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/27/JSP中的http状态码/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/10/27/JSP中的表单处理/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          JSP中的表单处理
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/10/17/MySQL创建数据库/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">MySQL创建数据库</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 John Doe<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
