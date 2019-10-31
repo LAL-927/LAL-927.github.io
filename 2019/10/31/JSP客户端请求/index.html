@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JSP客户端请求 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="刘大脑袋,刘大脑袋的 Blog">
+  
+  <meta name="description" content="当浏览器请求网页时，它会向Web服务器发送大量信息。这些信息不能直接读取，因为这些信息作为HTTP请求标头的一部分。可以通过HTTP协议以了解更多信息。下表列出了浏览器中的重要HTTP请求头信息。 这些信息经常在Web编程中使用 -编号请求头描述 1Accept此请求头指定浏览器或其他客户端可以处理的MIME类型。 image/png或image/jpeg是两种最常见的值。2Accept-Char">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP客户端请求">
+<meta property="og:url" content="http://yoursite.com/2019/10/31/JSP客户端请求/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="当浏览器请求网页时，它会向Web服务器发送大量信息。这些信息不能直接读取，因为这些信息作为HTTP请求标头的一部分。可以通过HTTP协议以了解更多信息。下表列出了浏览器中的重要HTTP请求头信息。 这些信息经常在Web编程中使用 -编号请求头描述 1Accept此请求头指定浏览器或其他客户端可以处理的MIME类型。 image/png或image/jpeg是两种最常见的值。2Accept-Char">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T09:25:23.887Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP客户端请求">
+<meta name="twitter:description" content="当浏览器请求网页时，它会向Web服务器发送大量信息。这些信息不能直接读取，因为这些信息作为HTTP请求标头的一部分。可以通过HTTP协议以了解更多信息。下表列出了浏览器中的重要HTTP请求头信息。 这些信息经常在Web编程中使用 -编号请求头描述 1Accept此请求头指定浏览器或其他客户端可以处理的MIME类型。 image/png或image/jpeg是两种最常见的值。2Accept-Char">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">刘大脑袋的 Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        刘大脑袋的 Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        这只是一个博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JSP客户端请求" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JSP客户端请求
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-31
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>当浏览器请求网页时，它会向Web服务器发送大量信息。这些信息不能直接读取，因为这些信息作为HTTP请求标头的一部分。可以通过HTTP协议以了解更多信息。下表列出了浏览器中的重要HTTP请求头信息。</p>
+<p>这些信息经常在Web编程中使用 -编号请求头描述</p>
+<p>1Accept此请求头指定浏览器或其他客户端可以处理的MIME类型。 image/png或image/jpeg是两种最常见的值。2Accept-Charset此请求头指定浏览器可用于显示信息的字符集。 例如：ISO-8859-1，UTF-8和GB2312等。3Accept-Encoding此请求头指定浏览器知道如何处理的编码类型。gzip或compress是两种最常见的值。</p>
+<p>4Accept-Language此请求头指定客户端的首选语言，以防servlet可以使用多种语言生成结果。例如：en，en-us，ru等</p>
+<p>5Authorization访问受密码保护的网页时，客户端使用此请求头来标识自己。</p>
+<p>6Connection此请求头指示客户端是否可以处理持久的HTTP连接。 持久连接允许客户端或其他浏览器通过单个请求检索多个文件。如果是Keep-Alive值表示使用持久连接。</p>
+<p>7Content-Length此请求头仅适用于POST请求，并以字节为单位给出POST数据的大小。</p>
+<p>8Cookie此请求头将返回给先前发送到服务器的cookie到浏览器。</p>
+<p>9Host此请求头指定原始URL中给出的主机和端口。</p>
+<p>10If-Modified-Since此请求头表示客户端仅在指定日期之后更改页面。 服务器发送代码304，表示如果没有较新的结果可用，则不修改标题。</p>
+<p>11If-Unmodified-Since该请求头与If-Modified-Since相反; 它指定只有当文档比指定日期更早时，动作才能成功。12Referer此请求头指示引荐网页的URL。 例如，如果位于网页A并单击链接到网页B，则当浏览器请求网页B时，网页A的URL包含在Referer标头中。</p>
+<p>HttpServletRequest对象request对象是javax.servlet.http.HttpServletRequest对象的一个实例。</p>
+<p> 每当客户端请求页面时，JSP引擎将创建一个新对象来表示该请求。请求对象提供了获取包括表单数据，</p>
+<p>Cookie，HTTP方法等HTTP头信息的方法。</p>
+<p>下表列出了可用于在JSP程序中读取HTTP头的重要方法。</p>
+<p> HttpServletRequest对象可以使用这些方法，该对象代表Web服务器的客户端请求。</p>
+<p>编号    方法    描述</p>
+<p>1    Cookie[] getCookies()返回一个数组，其中包含客户端使用此请求发送的所有Cookie对象。</p>
+<p>2    Enumeration getAttributeNames()返回枚举，其中包含此请求可用属性的名称。</p>
+<p>3    Enumeration getHeaderNames()返回此请求包含的所有头名称的枚举。</p>
+<p>4    Enumeration getParameterNames()返回此请求中包含的参数名称的String对象的枚举。</p>
+<p>5    HttpSession getSession()返回与此请求相关联的当前会话，或者如果请求没有会话，则自动创建一个会话。</p>
+<p>6    HttpSession getSession(boolean create)返回与此请求相关联的当前HttpSession，或者如果没有当前会话，并且create为true，则返回创建一个新会话。</p>
+<p>7    Locale getLocale()根据Accept-Language标头返回客户端将接受内容的首选区域设置。</p>
+<p>8    Object getAttribute(String name)作为Object返回命名属性的值，如果不存在给定名称的属性，则返回null。9    ServletInputStream getInputStream()使用ServletInputStream将请求的正文作为二进制数据检索。</p>
+<p>10    String getAuthType()返回用于保护servlet的认证方案的名称，例如“BASIC”或“SSL”，如果JSP未受保护，则返回null。</p>
+<p>11    String getCharacterEncoding()返回此请求正文中使用的字符编码的名称。</p>
+<p>12    String getContentType()返回请求主体的MIME类型，如果类型不知道，则返回null。</p>
+<p>13    String getContextPath()返回指示请求上下文的请求URI的部分。</p>
+<p>14    String getHeader(String name)以String形式返回指定的请求头的值。</p>
+<p>15    String getMethod()返回发出此请求的HTTP方法的名称，例如：GET，POST或PUT。</p>
+<p>16    String getParameter(String name)以String形式返回请求参数的值，如果该参数不存在，则返回null。</p>
+<p>17    String getPathInfo()返回与客户端发出此请求时发送的URL相关联的任何额外的路径信息。</p>
+<p>18    String getProtocol()返回请求使用的协议的名称和版本。</p>
+<p>19    String getQueryString()返回路径后请求URL中包含的查询字符串。</p>
+<p>20    String getRemoteAddr()返回发送请求的客户端的Internet协议(IP)地址。</p>
+<p>21    String getRemoteHost()返回发送请求的客户端的完全限定名称。</p>
+<p>22    String getRemoteUser()如果用户已通过身份验证，则返回进行此请求的用户的登录名，如果用户未通过身份验证，则返回null。</p>
+<p>23    String getRequestURI()将该请求URL的一部分从协议名称返回到HTTP请求的第一行中的查询字符串。</p>
+<p>24    String getRequestedSessionId()返回客户端指定的会话ID。</p>
+<p>25    String getServletPath()返回调用JSP的请求的URL部分。</p>
+<p>26    String[] getParameterValues(String name)返回包含给定请求参数的所有值的String对象数组，如果该参数不存在，则返回null。</p>
+<p>27    boolean isSecure()返回一个布尔值，指示此请求是否使用安全通道(如HTTPS)进行通信。</p>
+<p>28    int getContentLength()返回请求主体的长度(以字节为单位)，并由输入流提供;如果长度未知，返回-1。</p>
+<p>29    int getIntHeader(String name)将指定的请求头的值作为int类型返回。</p>
+<p>30    int getServerPort()返回接收到此请求的端口号。</p>
+<p>HTTP头请求示例以下是使用HttpServletRequest对象的getHeaderNames()方法来读取HTTP头信息的示例。</p>
+<p>此方法返回包含与当前HTTP请求相关联的头信息的枚举。使用枚举，可以以标准的方式循环枚举。</p>
+<p>这里使用hasMoreElements()方法来确定何时停止，然后使用nextElement()方法来获取每个参数名称的名称。</p>
+<p>首先打开Eclipse，创建一个动态Web项目：ClientRequest， -创建一个JSP文件：index.jsp，其代码如下所示 -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt; &lt;%@ page import=&quot;java.io.*,java.util.*&quot;%&gt;</span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt; </span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt; </span><br><span class="line">&lt;title&gt;客户端请求参数数据&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div style=&quot;margin: auto; width: 80%;&quot;&gt; </span><br><span class="line">&lt;h2&gt;客户端请求头参数数据示例&lt;/h2&gt; </span><br><span class="line">&lt;table width=&quot;100%&quot; border=&quot;1&quot; align=&quot;center&quot;&gt; </span><br><span class="line">&lt;tr bgcolor=&quot;#949494&quot;&gt; </span><br><span class="line">&lt;th&gt;Header Name&lt;/th&gt;</span><br><span class="line">&lt;th&gt;Header Value(s)&lt;/th&gt; </span><br><span class="line">&lt;/tr&gt;</span><br><span class="line">&lt;% Enumeration headerNames = request.getHeaderNames(); while (headerNames.hasMoreElements()) &#123; String paramName = (String) headerNames.nextElement(); out.print(&quot;&lt;tr&gt;&lt;td&gt;&quot; + paramName + &quot;&lt;/td&gt;n&quot;); </span><br><span class="line">String paramValue = request.getHeader(paramName); </span><br><span class="line">out.println(&quot;&lt;td&gt; &quot; + paramValue + &quot;&lt;/td&gt;&lt;/tr&gt;n&quot;); &#125; </span><br><span class="line">%&gt; </span><br><span class="line">&lt;/table&gt; </span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 执行上面示例代码，打开浏览器访问URL: <a href="http://localhost:8080/ClientRequest/index.jsp" target="_blank" rel="noopener">http://localhost:8080/ClientRequest/index.jsp</a> </p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年10月31日 17:25</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/31/JSP客户端请求/" title="JSP客户端请求">http://yoursite.com/2019/10/31/JSP客户端请求/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="John Doe">
+                John Doe
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/31/JSP客户端请求/&title=《JSP客户端请求》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/31/JSP客户端请求/&title=《JSP客户端请求》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/31/JSP客户端请求/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP客户端请求》 — Hexo&url=http://yoursite.com/2019/10/31/JSP客户端请求/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/31/JSP客户端请求/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/31/JSP客户端请求/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/31/JSP中的隐式对象/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JSP中的隐式对象</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 John Doe<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

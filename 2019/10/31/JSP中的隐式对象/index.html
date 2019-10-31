@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JSP中的隐式对象 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="刘大脑袋,刘大脑袋的 Blog">
+  
+  <meta name="description" content="在本章中，我们将讨论和学习JSP中的隐式对象。这些对象是JSP容器为每个页面中的开发人员提供的Java对象，开发人员可以直接调用它们而不用显式地声明它们再调用。 JSP隐式对象也称为预定义变量。 下表列出了JSP支持的九个隐式对象 - 编号    对象    描述1    request    这是与请求相关联的HttpServletRequest对象。2    response    这是与">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP中的隐式对象">
+<meta property="og:url" content="http://yoursite.com/2019/10/31/JSP中的隐式对象/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="在本章中，我们将讨论和学习JSP中的隐式对象。这些对象是JSP容器为每个页面中的开发人员提供的Java对象，开发人员可以直接调用它们而不用显式地声明它们再调用。 JSP隐式对象也称为预定义变量。 下表列出了JSP支持的九个隐式对象 - 编号    对象    描述1    request    这是与请求相关联的HttpServletRequest对象。2    response    这是与">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T09:26:55.086Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP中的隐式对象">
+<meta name="twitter:description" content="在本章中，我们将讨论和学习JSP中的隐式对象。这些对象是JSP容器为每个页面中的开发人员提供的Java对象，开发人员可以直接调用它们而不用显式地声明它们再调用。 JSP隐式对象也称为预定义变量。 下表列出了JSP支持的九个隐式对象 - 编号    对象    描述1    request    这是与请求相关联的HttpServletRequest对象。2    response    这是与">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">刘大脑袋的 Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        刘大脑袋的 Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        这只是一个博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JSP中的隐式对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JSP中的隐式对象
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-31
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>  在本章中，我们将讨论和学习JSP中的隐式对象。这些对象是JSP容器为每个页面中的开发人员提供的Java对象，开发人员可以直接调用它们而不用显式地声明它们再调用。 JSP隐式对象也称为预定义变量。</p>
+<p>下表列出了JSP支持的九个隐式对象 -</p>
+<p>编号    对象    描述<br>1    request    这是与请求相关联的HttpServletRequest对象。<br>2    response    这是与客户端的响应关联的HttpServletResponse对象。<br>3    out    这是用于将输出发送到客户端的PrintWriter对象。<br>4    session    这是与请求相关联的HttpSession对象。<br>5    application    这是与应用程序上下文相关联的ServletContext对象。<br>6    config    这是与该页面相关联的ServletConfig对象。<br>7    pageContext    这封装了使用服务器特定的功能，如更高性能的JspWriter。<br>8    page    这只是一个同义词，用于调用由翻译的servlet类定义的方法。<br>9    Exception    Exception对象允许指定的JSP访问异常数据。<br>\1. request对象<br>request对象是javax.servlet.http.HttpServletRequest对象的一个实例。每当客户端请求页面时，JSP引擎将创建一个新对象来表示该请求。</p>
+<p>request对象提供了获取包括表单数据，Cookie，HTTP方法等HTTP头信息的方法。</p>
+<p>在后续章节-JSP客户端请求中涵盖与request对象相关联的一整套方法。</p>
+<p>\2. response对象<br>response对象是javax.servlet.http.HttpServletResponse对象的一个实例。就像服务器创建request对象一样，它还创建一个对象来表示对客户端的响应。</p>
+<p>response对象还定义了处理创建新HTTP头的接口。通过此对象，JSP程序员可以添加新的Cookie或日期戳，HTTP状态代码等。</p>
+<p>在后续章节 - JSP服务器响应中介绍与response对象相关联的一整套方法。</p>
+<p>\3. out对象<br>out隐式对象是javax.servlet.jsp.JspWriter对象的一个实例，用于在响应中发送内容。</p>
+<p>初始化JspWriter对象根据页面是否缓存而不同地实例化。缓冲可以通过使用page指令的buffered =’false’属性来关闭。</p>
+<p>JspWriter对象包含与java.io.PrintWriter类大部分相同的方法。但是，JspWriter还有一些额外的方法用来处理缓冲。与PrintWriter对象不同，JspWriter会抛出IOExceptions异常。</p>
+<p>下表列出了用于写入boolean，char，int，double，object，String等类型数据的重要方法。</p>
+<p>编号    方法    描述<br>1    out.print(dataType dt)    打印数据类型值<br>2    out.println(dataType dt)    打印数据类型值，然后用新行(换行)字符终止行。<br>3    out.flush()    刷新流<br>\4. session对象<br>session对象是javax.servlet.http.HttpSession的一个实例，其行为与Java Servlet下的会话对象行为完全相同。<br>session对象用于跟踪客户端请求之间的客户端会话。在随后的章节 - JSP会话跟踪中将介绍会话对象的完整使用。</p>
+<p>\5. application对象<br>application对象是生成的Servlet的ServletContext对象的直接包装，实际上是javax.servlet.ServletContext对象的一个实例。</p>
+<p>application对象是JSP页面在其整个生命周期中的表示。 当JSP页面被初始化时，将创建此对象，并且在JSP页面被jspDestroy()方法删除时application对象也将被删除。</p>
+<p>通过向application对象添加属性值，可以确保组成Web应用程序的所有JSP文件都可以访问它。</p>
+<p>在JSP用户点击统计章节中介绍和学习application对象如何使用。</p>
+<p>\6. config对象<br>config对象是javax.servlet.ServletConfig的实例化，是生成的servlet的ServletConfig对象周围的直接包装。</p>
+<p>该对象允许JSP程序员访问Servlet或JSP引擎初始化参数，例如：路径或文件位置等。<br>以下配置方法是唯一可以使用的配置方法，它的用法是非常简单的 -</p>
+<p>config.getServletName();<br>这将返回当前servlet名称，它是包含在WEB-INFweb.xml文件中定义的<servlet-name>元素中的字符串。</servlet-name></p>
+<p>\7. pageContext对象<br>pageContext对象是javax.servlet.jsp.PageContext对象的一个实例。pageContext对象用于表示整个JSP页面。</p>
+<p>pageContext对象旨在作为访问有关页面的信息的一种手段，同时避免大部分实现细节。<br>该对象存储对每个请求的请求和响应对象的引用。应用程序，配置，会话和输出对象是通过访问此对象的属性导出的。</p>
+<p>pageContext对象还包含有关发布到JSP页面的指令的信息，包括缓冲信息，errorPageURL和页面范围。</p>
+<p>PageContext类定义了几个字段，包括：PAGE_SCOPE，REQUEST_SCOPE，SESSION_SCOPE和APPLICATION_SCOPE，它们标识了四个范围。它还支持超过40种方法，其中约一半是从javax.servlet.jsp.JspContext类继承的。</p>
+<p>其中一个重要的方法是removeAttribute。 此方法接受一个或两个参数。 例如，pageContext.removeAttribute(“attrName”)从所有作用域中删除属性，而以下代码仅将其从页面范围中删除 -</p>
+<p>pageContext.removeAttribute(“attrName”, PAGE_SCOPE);<br>可以在JSP文件上传章节中查看pageContext是如何使用的。</p>
+<p>\8. page对象<br>page对象是对该页面实例的实际引用。可以认为它是表示整个JSP页面的对象。</p>
+<p>page对象是this对象的直接同义词。</p>
+<p>\9. exception对象<br>exception对象是一个包含上一页抛出的异常的包装器。它通常用于生成对错误条件的适当响应。</p>
+<p>我们将在JSP异常处理这一章中介绍这个对象的完整用法。  </p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年10月31日 17:26</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/31/JSP中的隐式对象/" title="JSP中的隐式对象">http://yoursite.com/2019/10/31/JSP中的隐式对象/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="John Doe">
+                John Doe
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/31/JSP中的隐式对象/&title=《JSP中的隐式对象》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/31/JSP中的隐式对象/&title=《JSP中的隐式对象》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/31/JSP中的隐式对象/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP中的隐式对象》 — Hexo&url=http://yoursite.com/2019/10/31/JSP中的隐式对象/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/31/JSP中的隐式对象/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/31/JSP中的隐式对象/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2019/10/31/JSP客户端请求/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          JSP客户端请求
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/10/27/JSP中的表单处理/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JSP中的表单处理</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 John Doe<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
