@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>JSP中的动作 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="刘大脑袋,刘大脑袋的 Blog">
+  
+  <meta name="description" content="讨论JSP中的动作。这些操作使用XML语法中的结构来控制servlet引擎的行为。 我们可以动态插入文件，重新使用JavaBeans组件，将用户转发到另一个页面或为Java插件生成HTML。 为了方便示例中的代码运行的结果，我们使用Eclipse创建一个动态Web项目：JspActions 。 动作元素只有一种语法，因为它符合XML标准 -&amp;lt;jsp:action_name attribute">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JSP中的动作">
+<meta property="og:url" content="http://yoursite.com/2019/10/31/JSP中的动作/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="讨论JSP中的动作。这些操作使用XML语法中的结构来控制servlet引擎的行为。 我们可以动态插入文件，重新使用JavaBeans组件，将用户转发到另一个页面或为Java插件生成HTML。 为了方便示例中的代码运行的结果，我们使用Eclipse创建一个动态Web项目：JspActions 。 动作元素只有一种语法，因为它符合XML标准 -&amp;lt;jsp:action_name attribute">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2019-10-31T12:12:55.121Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JSP中的动作">
+<meta name="twitter:description" content="讨论JSP中的动作。这些操作使用XML语法中的结构来控制servlet引擎的行为。 我们可以动态插入文件，重新使用JavaBeans组件，将用户转发到另一个页面或为Java插件生成HTML。 为了方便示例中的代码运行的结果，我们使用Eclipse创建一个动态Web项目：JspActions 。 动作元素只有一种语法，因为它符合XML标准 -&amp;lt;jsp:action_name attribute">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">刘大脑袋的 Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        刘大脑袋的 Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        这只是一个博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="MinHow" target="_blank" href="//minhow.com">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="//github.com/wongminho">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="//weibo.com/WongMinHo">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/huangminhow">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-JSP中的动作" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      JSP中的动作
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-10-31
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>讨论JSP中的动作。这些操作使用XML语法中的结构来控制servlet引擎的行为。</p>
+<p>我们可以动态插入文件，重新使用JavaBeans组件，将用户转发到另一个页面或为Java插件生成HTML。</p>
+<p>为了方便示例中的代码运行的结果，我们使用Eclipse创建一个动态Web项目：JspActions 。</p>
+<p>动作元素只有一种语法，因为它符合XML标准 -&lt;jsp:action_name attribute = “value” /&gt; 动作元素基本上是预定义的功能。</p>
+<p>下表列出了可用的JSP动作 -</p>
+<p>编号    动作    描述</p>
+<p>1    jsp:include    在请求页面时包含一个文件。</p>
+<p>2    jsp:useBean    查找或实例化一个JavaBean。</p>
+<p>3    jsp:setProperty    设置JavaBean的属性。</p>
+<p>4    jsp:getProperty    将JavaBean的属性插入输出。</p>
+<p>5    jsp:forward    将请求者转发到新页面。</p>
+<p>6    jsp:plugin    生成针对Java插件创建OBJECT或EMBED标记的特定于浏览器的代码。</p>
+<p>7    jsp:element    动态定义XML元素。</p>
+<p>8    jsp:attribute    定义动态定义的XML元素属性。</p>
+<p>9    jsp:body    定义动态定义的XML元素的正文。</p>
+<p>10    jsp:text    用于在JSP页面和文档中编写模板文本。</p>
+<p>共同属性所有动作元素共有两个属性：id属性和scope属性。</p>
+<p>id属性id属性唯一标识动作元素，并允许在JSP页面内引用该操作。</p>
+<p> 如果动作创建了一个对象的实例，则id值可以用于通过隐式对象PageContext引用它。</p>
+<p>scope属性scope属性标识动作元素的生命周期。</p>
+<p>id属性和scope属性是直接相关的，因为scope属性决定了与id关联的对象的使用寿命。</p>
+<p>scope属性有四个可能的值：pagerequestsessionapplication1. jsp:include动作此动作允许将文件插入到正在生成的页面中。</p>
+<p>语法如下所示 -&lt;jsp:include page = “relative URL” flush = “true” /&gt; 与在将JSP页面转换为servlet时将文件插入的include指令不同，此动作在请求页面时插入该文件。</p>
+<p>下表列出了与include动作相关联的属性 -</p>
+<p>编号    属性    描述</p>
+<p>1    page    要包括的页面的相对URL。</p>
+<p>2    flush    布尔属性确定包含的资源是否在包含其缓冲区之前被刷新。</p>
+<p>示例下面定义两个文件date.jsp和index.jsp，</p>
+<p>以下是date.jsp文件的内容 -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html;</span><br><span class="line">charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;</span><br><span class="line">%&gt; </span><br><span class="line">&lt;p&gt;今天是: &lt;%= (new java.util.Date()).toLocaleString()%&gt;&lt;/p&gt; </span><br><span class="line">以下是index.jsp文件的内容 -</span><br><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html;</span><br><span class="line">charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;</span><br><span class="line">%&gt; </span><br><span class="line">&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD HTML 4.01 Transitional//EN&quot; &quot;http://www.w3.org/TR/html4/loose.dtd&quot;&gt; &lt;html&gt; </span><br><span class="line">&lt;head&gt; </span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt; </span><br><span class="line">&lt;title&gt;include动作示例&lt;/title&gt; </span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;h2&gt;include动作示例&lt;/h2&gt; </span><br><span class="line">&lt;jsp:include page=&quot;date.jsp&quot; flush=&quot;true&quot; /&gt; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>现在将这些文件保存在根目录下，并尝试访问index.jsp。</p>
+<p>￼2. jsp:useBean 动作useBean动作是非常通用的。</p>
+<p>它首先使用id和scope变量搜索现有对象。如果未找到对象，则会尝试创建指定的对象。</p>
+<p>加载bean的最简单的方法如下 -&lt;jsp:useBean id = “name” class = “package.class” /&gt; </p>
+<p>当加载了一个bean类，可以使用jsp:setProperty和jsp:getProperty操作来修改和检索bean属性。</p>
+<p>下表列出了与useBean动作关联的属性 -</p>
+<p>编号    属性    描述</p>
+<p>1    class    指定bean的完整包名称。</p>
+<p>2    type    指定将引用对象的变量的类型。</p>
+<p>3    beanName    给出由java.beans.Beans类instantiate()方法指定的bean的名称。</p>
+<p>现在来看看jsp:setProperty和jsp:getProperty动作，然后再给出与这些操作相关的有效示例。</p>
+<p>3.jsp:setProperty 动作setProperty操作设置Bean的属性。 在此操作之前，Bean先前已定义。 有两种使用setProperty操作的基本方法 -可以使用jsp:setProperty在之后，但是在jsp:useBean元素之外，</p>
+<p>如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id = &quot;myName&quot; ... /&gt; ... &lt;jsp:setProperty name = &quot;myName&quot; property = &quot;someProperty&quot; .../&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 在这种情况下，执行jsp:setProperty，无论是实例化新bean还是找到现有的bean。jsp:setProperty可以在jsp:useBean元素的正文内的上下文内出现，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id = &quot;myName&quot; ... &gt; ... &lt;jsp:setProperty name = &quot;myName&quot; property = &quot;someProperty&quot; .../&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 这里，只有当一个新对象被实例化时，才执行jsp:setProperty，如果找到了一个现有的对象，则不执行。</p>
+<p>下表列出了与setProperty动作相关联的属性 -</p>
+<p>编号    属性    描述</p>
+<p>1    name    指定将设置其属性的bean。 Bean在先前就已经定义了。</p>
+<p>2    property    表示要设置的属性。值“<em>”表示名称与bean属性名称匹配的所有请求参数将被传递给对应的setter方法。</em></p>
+<p>3    value    要分配给给定属性的值。参数的值为null，或者参数不存在，则setProperty操作被忽略。</p>
+<p>4    paramparam属性是属性要接收的值的请求参数的名称。不能同时使用值和参数，但是不允许使用。</p>
+<p>4.jsp:getProperty动作getProperty操作用于检索给定属性的值并将其转换为字符串，最后将其插入输出。getProperty动作只有两个属性，这两个属性都是必需的。</p>
+<p>getProperty操作的语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:useBean id = &quot;myName&quot; ... /&gt; ... &lt;jsp:getProperty name = &quot;myName&quot; property = &quot;someProperty&quot; .../&gt;</span><br></pre></td></tr></table></figure>
+
+<p>下表列出了与getProperty动作相关联的必需属性 -</p>
+<p>编号    动作    描述</p>
+<p>1    name    要检索的属性的Bean名称。 前提是Bean在先前已经定义了。</p>
+<p>2    propertyproperty    属性是要检索的Bean属性的名称。示例下面定义一个Bean类：Message ，其代码如下-/</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">* File: Message.java */ package com.yiibai; public class Message &#123; private String message = &quot;No message specified&quot;; public String getMessage() &#123; return(message); &#125; public void setMessage(String message) &#123; this.message = message; &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>在main.jsp文件中编写以下代码。</p>
+<p>这将加载bean并设置/获取一个简单的String参数 -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page language=&quot;java&quot; contentType=&quot;text/html; charset=UTF-8&quot; pageEncoding=&quot;UTF-8&quot;%&gt; &lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;在JSP使用JavaBeans示例&lt;/title&gt; </span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;div style=&quot;margin:auto;text-align:center;&quot;&gt;</span><br><span class="line">&lt;h2&gt;在JSP使用JavaBeans示例&lt;/h2&gt; </span><br><span class="line">&lt;hr/&gt; </span><br><span class="line">&lt;jsp:useBean id=&quot;msg&quot; class=&quot;com.yiibai.Message&quot; /&gt;</span><br><span class="line">&lt;p&gt;获取默认设置的信息是：&lt;jsp:getProperty name=&quot;msg&quot; property=&quot;message&quot; /&gt;&lt;/p&gt; &lt;jsp:setProperty name=&quot;msg&quot; property=&quot;message&quot; value=&quot;Hello JSP...&quot; /&gt; </span><br><span class="line">&lt;p&gt;获取设置的信息是：&lt;jsp:getProperty name=&quot;msg&quot; property=&quot;message&quot; /&gt;</span><br><span class="line">&lt;/p&gt; </span><br><span class="line">&lt;/div&gt; </span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>现在尝试访问main.jsp，</p>
+<p>5.jsp:forward动作<a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a>动作终止当前页面的操作，并将请求转发到另一个资源，例如静态页面，另一个JSP页面或Java Servlet。</p>
+<p>以下是<a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a>动作的语法 -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:forward page = &quot;Relative URL&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 下表列出了与<a href="jsp:forward" target="_blank" rel="noopener">jsp:forward</a>动作相关联的必需属性 -</p>
+<p>编号    动作    描述</p>
+<p>1    page    应该包含另一个资源的相对URL，例如静态页面，另一个JSP页面或Java Servlet。</p>
+<p>示例创建以下两个文件：date.jsp和main.jsp，分别如下 -以下是date.jsp文件的内容 -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;Today&apos;s date: &lt;%= (new java.util.Date()).toLocaleString()%&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 以下是main.jsp文件的内容 -现在将这些文件保存在根目录下，并尝试访问main.jsp。</p>
+<p>在这里，它 从main.jsp丢弃了内容，并显示了来自转发目标页面的内容。</p>
+<p>6.jsp:plugin 动作<a href="jsp:plugin" target="_blank" rel="noopener">jsp:plugin</a>动作用于将Java组件插入到JSP页面中。</p>
+<p>它确定浏览器的类型，并根据需要插入<object>或<embed>标签。如果所需的插件不存在，它会下载插件，然后执行Java组件。</object></p>
+<p>Java组件可以是Applet或JavaBean。<a href="jsp:plugin" target="_blank" rel="noopener">jsp:plugin</a>动作有几个属性对应于用于格式化Java组件的常用HTML标记。 <param>元素也可用于向Applet或Bean发送参数。</p>
+<p>以下是使用<a href="jsp:plugin" target="_blank" rel="noopener">jsp:plugin</a>动作的典型语法</p>
+<p> -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:plugin type = &quot;applet&quot; codebase = &quot;dirname&quot; code = &quot;MyApplet.class&quot; width = &quot;60&quot; height = &quot;80&quot;&gt; &lt;jsp:param name = &quot;fontcolor&quot; value = &quot;red&quot; /&gt; &lt;jsp:param name = &quot;background&quot; value = &quot;black&quot; /&gt;</span><br></pre></td></tr></table></figure>
+
+<p><a href="jsp:fallback" target="_blank" rel="noopener">jsp:fallback</a> Unable to initialize Java Plugin   如果您有兴趣，可以使用一些小程序尝试此操作。</p>
+<p>新元素<fallback>元素可用于指定要发送给用户的错误字符串，以防组件发生故障。</fallback></p>
+<p><a href="jsp:element" target="_blank" rel="noopener">jsp:element</a>，<a href="jsp:attribute" target="_blank" rel="noopener">jsp:attribute</a>和<a href="jsp:body" target="_blank" rel="noopener">jsp:body</a>动作用于动态定义XML元素。 这个词动态是重要的，因为这意味着XML元素可以在请求时生成，而不是在编译时静态生成。</p>
+<p>以下是动态定义XML元素的简单示例 -</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@page language = &quot;java&quot; contentType = &quot;text/html&quot;%&gt; </span><br><span class="line">&lt;html xmlns = &quot;http://www.w3c.org/1999/xhtml&quot; xmlns:jsp = &quot;http://java.sun.com/JSP/Page&quot;&gt; &lt;head&gt;</span><br><span class="line">&lt;title&gt;Generate XML Element&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;jsp:element name = &quot;xmlElement&quot;&gt; </span><br><span class="line">&lt;jsp:attribute name = &quot;xmlElementAttr&quot;&gt; Value for the attribute &lt;/jsp:attribute&gt; &lt;jsp:body&gt; Body for XML element &lt;/jsp:body&gt; </span><br><span class="line">&lt;/jsp:element&gt; </span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt; 这将在运行时生成以下HTML代码 -&lt;html xmlns = &quot;http://www.w3c.org/1999/xhtml&quot; xmlns:jsp = &quot;http://java.sun.com/JSP/Page&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Generate XML Element&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;xmlElement xmlElementAttr = &quot;Value for the attribute&quot;&gt; Body for XML element &lt;/xmlElement&gt;</span><br><span class="line">&lt;/body&gt; </span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>7.jsp:text动作可以使用<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>操作将模板文本写入JSP页面和文档。以下是此操作的简单语法 -<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>Template data 模板的主体不能包含其他元素; 它只能包含文本和EL表达式(注 - EL表达式将在后续章节中进行说明)。 </p>
+<p>请注意，在XML文件中不能使用诸如${whatever&gt; 0}的表达式，因为大于符号是非法的。它是使用gt形式来代替，例如${whatever gt 0}或替代方法是将值嵌入到CDATA中。如下示例 -<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a><!--[CDATA[<br>]]--> 如果需要包括DOCTYPE声明，例如XHTML，还必须使用<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>元素，如下所示：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:text&gt;</span><br><span class="line">&lt;![CDATA[&lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Strict//EN&quot; &quot;DTD/xhtml1-strict.dtd&quot;&gt;]]&gt;</span><br><span class="line">&lt;/jsp:text&gt; </span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;jsp:text action&lt;/title&gt;</span><br><span class="line">&lt;/head&gt; </span><br><span class="line">&lt;body&gt; </span><br><span class="line">&lt;books&gt;&lt;book&gt;&lt;jsp:text&gt; Welcome to JSP Programming &lt;/jsp:text&gt;</span><br><span class="line">&lt;/book&gt;</span><br><span class="line">&lt;/books&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p> 尝试以上示例，并使用<a href="jsp:text" target="_blank" rel="noopener">jsp:text</a>操作。</p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年10月31日 20:12</p>
+        <p>原始链接： <a class="post-url" href="/2019/10/31/JSP中的动作/" title="JSP中的动作">http://yoursite.com/2019/10/31/JSP中的动作/</a></p>
+        <footer>
+            <a href="http://yoursite.com">
+                <img src="/images/logo.png" alt="John Doe">
+                John Doe
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2019/10/31/JSP中的动作/&title=《JSP中的动作》 — Hexo&pic=http://yoursite.comimages/logo.png" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2019/10/31/JSP中的动作/&title=《JSP中的动作》 — Hexo&source=" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2019/10/31/JSP中的动作/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《JSP中的动作》 — Hexo&url=http://yoursite.com/2019/10/31/JSP中的动作/&via=http://yoursite.com" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2019/10/31/JSP中的动作/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://yoursite.com/2019/10/31/JSP中的动作/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/31/JSP中的page/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">JSP中的page</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 John Doe<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "http://yoursite.com",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/js/search.js"></script>
+<script src="/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/js/animate.js"></script>
+
+
+  <script src="/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
